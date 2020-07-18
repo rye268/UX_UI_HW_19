@@ -1,0 +1,535 @@
+* {
+    margin: 0 auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ABOUT ME SECTION CONSTRUCTED USING FLEX -----------------------------------------------------------------------------*/
+
+nav {
+    margin-top: 10px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 4;
+}
+
+.about_me {
+    position: relative;
+    background: #651212;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow-y: hidden;
+}
+
+.navigation_am, .navigation_p {
+    font-family: 'Montserrat', Times, serif;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.navigation_am, .navigation_am a {
+    color: white
+}
+
+.overlay_am {
+    position: absolute;
+    height: 100vh;
+    width: 42%;
+    background: rgb(0,0,0,0.7);
+    z-index: 2;
+}
+
+.logo {
+    width: 40px;
+    position: absolute;
+    margin: -20px 10px 10px -20px;
+}
+
+.social img {
+    margin-left: 50px;
+    width: 30px;
+}
+
+h1 {
+    font-family: 'Droid Serif', Times, serif;
+    font-weight: 800;
+    font-size: 80px;
+}
+
+h2 {
+    font-family: 'Montserrat', Times, serif;
+    font-size: 60px;
+    font-weight: 300;
+    letter-spacing: 15px;
+}
+
+h3 {
+    font-family: 'Montserrat', Times, serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+h4 {
+    font-family: 'Montserrat', Times, serif;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+p {
+    font-family: 'Droid serif', Times, serif;
+    font-size: 12px;
+}
+
+.about_me h1, .about_me h3, .about_me p, .contact h3 {
+    color: white;
+}
+
+.left_am, .left_p, .left_c {
+    position: absolute;
+    z-index: 4;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 140px;
+    height: 100%;
+}
+
+.left_am h1, .left_p h1, .left_c h1 {
+    margin-bottom: -10px;
+}
+
+.left_am h3, left_p h3, .left_c h3 {
+    margin-top: 10px;
+}
+
+.scroll {
+    /* margin-top: 280%; */
+    position: absolute;
+    bottom: 200px;
+}
+
+@media only screen and (max-height:500px) {
+    .scroll {
+        display: none;
+    }
+}
+
+.scroll p {
+    color: #A8A8A8;
+    transform: rotate(270deg);
+    font-family: 'Montserrat', Times, serif;
+    font-size: 12px;
+    margin-top: 60px;
+}
+
+.right_am {
+    position: absolute;
+    margin-top: 140px;
+    margin-left: 50%;
+    margin-right: 50px;
+    line-height: 30px;
+    z-index: 4;
+    min-width: 500px;
+}
+
+.doodle {
+    position: absolute;
+    margin-top: 330px;
+    margin-right: 200px;
+    margin-left: 300px;
+    width: 1000px;
+    z-index: 4;
+}
+
+/* PORTFOLIO SECTION CONSTRUCTED USING FLEX -----------------------------------------------------------------------------*/
+
+.portfolio {
+    position: relative;
+    min-height: 700px;
+    background: white;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.navigation_p, .navigation_p a {
+    color: black;
+}
+
+.overlay_p {
+    position: absolute;
+    min-height: 700px;
+    height: 100vh;
+    width: 42%;
+    background: #E3DDDD;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+
+.portfolio h1, .portfolio h3, .resume h1, .resume h3 {
+    color: #673D3D;
+}
+
+.left_p .scroll p {
+    color: #673D3D;
+}
+
+.right_p {
+    margin-top: 150px;
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+}
+
+.right_p h2 {
+    margin-left: 24%;
+    color: #673D3D;
+}
+
+.projects {
+    margin-top: 60px;
+    margin-left: 24%;
+}
+
+.project {
+    position: relative;
+    margin-right: 100px;
+    float: left;
+}
+
+.project_image {
+    width: 300px;
+    z-index: -1;
+}
+
+.project_hover {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+}
+
+.project_hover img {
+    width: 600px;
+}
+
+.journeo img {
+    width: 400px;
+}
+
+.lm {
+    position: absolute;
+    top: 220px;
+    left: 50px;
+}
+
+.journeo .lm {
+    top: 210px;
+    left: 50px;
+}
+
+.lm a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 13px;
+    font-family: 'Montserrat';
+}
+
+.yellow_font {
+    color: #FFD800;
+}
+
+.golden_font {
+    color: #968003;
+}
+
+/* CONTACT SECTION CONSTRUCTED USING CSS GRID -----------------------------------------------------------------------------*/
+.contact {
+    position: relative;
+    min-height: 540px;
+    background: #151515;
+    display: grid;
+    grid-template-columns: 42% 58%;
+    grid-template-rows: 100vh;
+    grid-template-areas: "overlay_c main_c";
+    overflow: hidden;
+}
+
+.contact nav {
+    position: absolute;
+}
+
+.overlay_c {
+    width: 100%;
+    min-height: 540px;
+    background: rgb(110,31,46,0.7);    
+    grid-area: overlay_c;
+    z-index: 2;
+}
+
+.main_c {
+    grid-area: main_c;
+}
+
+.left_c h1, .left_c h3, .contact h4 {
+    color: white;
+}
+
+.contact_us_image {
+    margin-left: -50%;
+    width: 150%;
+    margin-top: -20%;
+}
+
+.contact_us_line {
+    width: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contact_blurb {
+    margin-top: 180px;
+    margin-left: 50px;
+}
+
+/* FORM */
+
+.form-style-1 {
+    margin:0px;
+    margin-top: 20px;
+    margin-right: 90px;
+	max-width: 100%;
+	padding: 0px;
+}
+
+input, textarea {
+    font: 10px "Roboto Slab", "Lucida Grande", sans-serif;
+}
+
+.form-style-1 li {
+	padding: 0;
+	display: block;
+	list-style: none;
+	margin: 10px 0 0 0;
+}
+.form-style-1 label{
+	margin:0 0 3px 0;
+	padding:0px;
+	display:block;
+	font-weight: bold;
+}
+.form-style-1 input[type=text], 
+.form-style-1 input[type=date],
+.form-style-1 input[type=datetime],
+.form-style-1 input[type=number],
+.form-style-1 input[type=search],
+.form-style-1 input[type=time],
+.form-style-1 input[type=url],
+.form-style-1 input[type=email],
+textarea, 
+select{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border:1px solid #BEBEBE;
+	padding: 7px;
+	margin:0px;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;	
+}
+.form-style-1 input[type=text]:focus, 
+.form-style-1 input[type=date]:focus,
+.form-style-1 input[type=datetime]:focus,
+.form-style-1 input[type=number]:focus,
+.form-style-1 input[type=search]:focus,
+.form-style-1 input[type=time]:focus,
+.form-style-1 input[type=url]:focus,
+.form-style-1 input[type=email]:focus,
+.form-style-1 textarea:focus, 
+.form-style-1 select:focus{
+	-moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 1px solid #88D5E9;
+}
+.form-style-1 .field-divided{
+	width: 32.6%;
+}
+
+.form-style-1 .field-long{
+	width: 100%;
+}
+.form-style-1 .field-select{
+	width: 100%;
+}
+.form-style-1 .field-textarea{
+	height: 100px;
+}
+.form-style-1 input[type=submit], .form-style-1 input[type=button]{
+	background: #A88F00;
+	padding: 13px 24px 13px 24px;
+    border: none;
+    border-radius: 10px;
+    float: right;
+    font-family: "Montserrat";
+    font-weight: 500;
+	color: #fff;
+}
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
+	background: #413802;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+.form-style-1 .required{
+	color:red;
+}
+
+.left_c .scroll {
+    margin-top: 320%;
+}
+
+
+/* RESUME SECTION -----------------------------------------------------------------------------*/
+
+.resume {
+    position: relative;
+    min-height: 700px;
+    background: white;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.resume .right_p {
+    display: flex;
+    height: 100vh;
+}
+
+.resume_detail {
+    height: 70%;
+    width: 60%;
+    text-align: center;
+}
+
+.resume_image {
+    height: 100%;
+}
+
+.download_resume {
+    font-family: 'Montserrat';
+    font-size: 13px;
+    padding: 10px 25px;
+    font-weight: 400;
+    color: white;
+    background-color: #A88F00;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    left: 42%;
+    top: 50%;
+}
+
+/* FOOTER -----------------------------------------------------------------------------*/
+footer {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    background-color: black;
+    position: relative;
+}
+
+footer p {
+    color: white;
+    text-align: right;
+    font-family: 'Montserrat';
+    font-size: 10px;
+    font-weight: 100;
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+}
+
+
+
+
+
+/* MEDIA QUERIES -----------------------------------------------------------------------------*/
+
+@media only screen and (max-width:1063px) {
+    .overlay_p {
+        height: 850px;
+    }
+    .portfolio {
+        height: 850px;
+    }
+    .right_am {
+        min-width: 300px;
+    }
+    .doodle {
+        margin-left: 0px;
+        opacity: 0.2;
+        width: 900px;
+    }
+    .form-style-1 .field-divided {
+        width: 100%;
+    }
+    .form-style-1 input[type=text], .form-style-1 input[type=email] {
+        margin-top: 3px;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .logo {
+        display: none;
+    }
+    .social {
+        display: none;
+    }
+    .delete {
+        display: none;
+    }
+    .right_am {
+        min-width: 0px;
+    }
+    .right_p h2 {
+        margin-left: 50%;
+        float: right;
+        margin-right: 5%;
+    }
+    .right_p h2 .golden_font {
+        float: right;
+        margin-right: 5%;
+    }
+    .contact_us_image {
+        display: none;
+    }
+    .resume_detail, .download_resume {
+        margin-top: 100px;
+    }
+}
